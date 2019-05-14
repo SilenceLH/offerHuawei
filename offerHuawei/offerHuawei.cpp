@@ -282,29 +282,49 @@ class Sultion {
 		cout << num;
 		return 0;
 	}
-
-
-
+	/************************************************************************/
+	/*                      11、数字颠倒           
+	题目描述：输入一个整数，将这个整数以字符串的形式逆序输出
+			程序不考虑负数的情况，若数字含有0，则逆序形式也含有0，如输入为100，则输出为001
+	输入描述:输入一个int整数
+	输出描述:将这个整数以字符串的形式逆序输出
+	示例1
+	输入：1516000
+	输出：0006151
+	*/
+	/************************************************************************/
+	int main_11()
+	{
+		int num;
+		cin >> num;
+		string res;
+		int temp;
+		while (num != 0)
+		{
+			temp = num % 10;
+			num = num / 10;
+			res += to_string(temp);
+		}
+		cout << res << endl;
+		return 0;
+	}
+	
 };
 
 
 int main()
 {
-	string s;
-	cin >> s;
-	int num = 0;
-	int char_num[127] = { 0 };
-	int len = s.length();
-	for (int i = 0; i < len; i++)
+	int num;
+	cin >> num;
+	string res;
+	int temp;
+	while (num != 0)
 	{
-		int temp = s[i];
-		if (temp < 127 && temp > 0 && char_num[temp] == 0)
-		{
-			num++;
-			char_num[temp] = 1;
-		}
+		temp = num % 10;
+		num = num / 10;
+		res += to_string(temp);
 	}
-	cout << num;
+	cout << res << endl;
 	return 0;
 }
 
